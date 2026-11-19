@@ -1,3 +1,5 @@
+[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/srt180/icloud-calendar-plugin)
+
 # iCloud 日历（中国区）· DeepSeek Harness 插件
 
 [DeepSeek Harness](https://github.com/deepseek-ai)（DSH）的 Host 插件，为国区 Apple ID 的 iCloud 日历与通讯录提供 Agent 工具，功能对标 ChatGPT 的 iCloud Calendar 插件：
@@ -14,7 +16,13 @@
 dsh plugin --profile web add github:srt180/icloud-calendar-plugin
 ```
 
-本插件未发布到 npm，因此用 `github:<owner>/<repo>` 源码方式安装。
+已发布到 npm 时可用包名安装（会出现在 DSH 内置插件中心）：
+
+```sh
+dsh plugin --profile web add dsh-icloud-calendar-cn
+```
+
+未发布 npm 时，用 `github:<owner>/<repo>` 源码方式安装。
 
 **其他方式**
 
