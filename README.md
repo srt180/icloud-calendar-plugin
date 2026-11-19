@@ -8,6 +8,16 @@
 
 ## 安装
 
+**命令行安装（推荐）**
+
+```sh
+dsh plugin --profile web add github:srt180/icloud-calendar-plugin
+```
+
+本插件未发布到 npm，因此用 `github:<owner>/<repo>` 源码方式安装。
+
+**其他方式**
+
 在 DeepSeek Harness 中安装本插件（任选其一）：
 
 **方式一：告诉助手安装**
@@ -34,6 +44,8 @@ git clone https://github.com/srt180/icloud-calendar-plugin.git
 ```
 
 安装后重新打开一个会话即可使用（Host 插件注册的工具在新会话中生效）。
+
+> 兼容性：DSH Host 插件，需 DSH 支持 `bundle.patch`（`cordis.patch.yml`）；Node.js ≥ 20；已在 macOS 上验证；纯 ESM、无运行时依赖。
 
 ## 工具
 
