@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "iCloud Calendar (China)",
+    "description": "Connects a China-region Apple ID over CalDAV / CardDAV and adds 6 tools: list calendars, find events, create events, update events, delete events, and look up iCloud contacts.\n\nBefore use: supply the Apple ID email and an app-specific password (appleid.apple.com > Sign-In and Security > App-Specific Passwords; not the account password). Ask the assistant to \"set up iCloud Calendar\" in chat; it stores the credential in the local credential record icloud-calendar/default (mode 0600), never in plugin configuration.\n\nCapabilities: times default to Asia/Shanghai; recurring events expand per occurrence inside the query window; all-day events, alarms, and attendees are supported; updates change only the fields you pass and refuse to overwrite another device's change (412).\n\nLimitations: calendar events only (no reminders); contacts are read-only; it contacts caldav.icloud.com.cn / contacts.icloud.com.cn only when these tools run and never reads the local calendar database. Disabling the plugin removes the tools; events already written to iCloud are unaffected."
+  }
+}

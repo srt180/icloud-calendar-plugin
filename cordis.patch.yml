@@ -1,0 +1,11 @@
+# DeepSeek Harness (DSH) bundle: mounts the Host plugin and registers 6
+# CalDAV/CardDAV tools. Apple ID credentials are never stored here — they live
+# in the profile credential store under `icloud-calendar/default`.
+- insert:
+    - id: icloud-calendar-cn
+      name: dsh-icloud-calendar-cn
+      config:
+        timeZone: Asia/Shanghai
+        # Set `proxy` only when iCloud must be reached through an HTTP proxy
+        # (Node's https client ignores the macOS system proxy), e.g.:
+        #   proxy: http://127.0.0.1:7890

@@ -1,0 +1,48 @@
+{
+  "name": "dsh-icloud-calendar-cn",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "中国区 iCloud 日历与通讯录插件（DeepSeek Harness / DSH 插件）：通过 CalDAV / CardDAV 连接 Apple ID，列出日历、查找/新建/修改/删除事件、查询联系人。",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "icloud",
+    "caldav",
+    "carddav",
+    "calendar",
+    "contacts",
+    "china"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srt180/icloud-calendar-plugin.git"
+  },
+  "homepage": "https://github.com/srt180/icloud-calendar-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/srt180/icloud-calendar-plugin/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

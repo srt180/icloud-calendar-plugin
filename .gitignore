@@ -1,0 +1,17 @@
+# 绝不上传：本机工作产物（含个人数据、备份、服务器响应）
+work/
+
+# 依赖与构建
+node_modules/
+*.log
+
+# 系统与编辑器
+.DS_Store
+.idea/
+.vscode/
+
+# 本地凭据与私密配置
+.credentials.yaml
+.env
+.env.local
+*.pem

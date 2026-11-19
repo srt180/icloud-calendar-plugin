@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "iCloud 日历（中国区）",
+    "description": "通过 CalDAV / CardDAV 连接中国区 Apple ID，新增 6 个工具：列出日历、查找事件、新建事件、修改事件、删除事件、查询 iCloud 通讯录。\n\n使用前：需要提供中国区 Apple ID 邮箱与 App 专用密码（appleid.apple.com 的「登录与安全 → App 专用密码」生成，不是登录密码）。直接在会话里对助手说「配置 iCloud 日历」，助手会把凭据存入本机凭据存储 icloud-calendar/default（0600 权限，不写入插件配置）。\n\n能力说明：时间默认按 Asia/Shanghai 换算并显示；重复事件会在查询范围内逐次展开；支持全天事件、提前提醒与参与者；修改事件时只改指定字段，其余属性保持不变，并在其他设备已修改时拒绝覆盖（412）。\n\n限制：仅处理日历事件（不含提醒事项）；通讯录为只读；访问范围仅限调用这些工具时对 caldav.icloud.com.cn / contacts.icloud.com.cn 的请求；不读取本机日历数据库。停用插件后工具随即消失，已写入 iCloud 的事件不受影响。"
+  }
+}
