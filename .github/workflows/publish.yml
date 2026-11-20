@@ -1,0 +1,54 @@
+name: Publish to npm
+
+# Publishes `dsh-icloud-calendar-cn` through npm Trusted Publishing (OIDC).
+# No long-lived npm token is stored anywhere: npm verifies that this workflow
+# really runs in this repository and issues a short-lived, publish-scoped token.
+#
+# Trigger one of two ways:
+#   - push a tag like v1.0.1  (tag must match the version in package.json)
+#   - run it manually from the Actions tab (workflow_dispatch)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  id-token: write   # required: lets GitHub mint the OIDC token npm verifies
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Trusted publishing needs Node >= 22.14.0 and npm CLI >= 11.5.1
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
+
+      - name: Show toolchain versions
+        run: |
+          node -v
+          npm -v
+
+      - name: Verify tag matches package.json version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          PKG_VERSION="$(node -p "require('./package.json').version")"
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          echo "package.json=$PKG_VERSION tag=$TAG_VERSION"
+          if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $PKG_VERSION"
+            exit 1
+          fi
+
+      - name: Run test suite
+        run: node test/e2e.mjs
+
+      - name: Publish to npm (Trusted Publishing)
+        run: npm publish --access public

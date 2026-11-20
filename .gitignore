@@ -10,6 +10,9 @@ node_modules/
 .idea/
 .vscode/
 
+# 本地 npm 缓存（npm publish 时被沙箱限制时使用）
+.npm-cache/
+
 # 本地凭据与私密配置
 .credentials.yaml
 .env
